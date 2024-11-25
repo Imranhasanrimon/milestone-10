@@ -11,10 +11,6 @@ app.use(express.json())
 
 
 
-
-
-
-
 const uri = "mongodb+srv://imranhasanrimon5:cuFN6PrI6y6lRAvR@cluster0.7hbnv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
@@ -45,6 +41,11 @@ async function run() {
             console.log('new user', user);
             const result = await usersCollection.insertOne(user)
             res.send(result)
+        })
+
+        app.delete('/users/:id', (req, res) => {
+            const id = req.params.id;
+            console.log('please delete from database id: ', id);
         })
 
         // Send a ping to confirm a successful connection

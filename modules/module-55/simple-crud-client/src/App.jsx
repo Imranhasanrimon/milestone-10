@@ -1,6 +1,8 @@
+import { useNavigate } from 'react-router-dom';
 import './App.css'
 
 function App() {
+  const navigate = useNavigate()
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.target;
@@ -34,6 +36,8 @@ function App() {
         <input type="text" name="email" placeholder='email' id="" /> <br />
         <input type="submit" value='add user' id="" />
       </form>
+
+      <button onClick={() => navigate('/users')}>go users</button>
 
     </>
   )
