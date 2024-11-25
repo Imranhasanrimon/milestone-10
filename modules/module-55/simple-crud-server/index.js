@@ -30,9 +30,21 @@ async function run() {
     try {
         // Connect the client to the server	(optional starting in v4.7)
         await client.connect();
+
+        const database = client.db("usersDB");
+        const usersCollection = database.collection("users");
+
+        app.get('/users', async (req, res) => {
+            const cursor = usersCollection.find()
+            const result = await cursor.toArray();
+            res.send(result)
+        })
+
         app.post('/users', async (req, res) => {
             const user = req.body;
             console.log('new user', user);
+            const result = await usersCollection.insertOne(user)
+            res.send(result)
         })
 
         // Send a ping to confirm a successful connection
@@ -51,5 +63,5 @@ app.get('/', (req, res) => {
     res.send('hello world')
 })
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
+    console.log(`this app listening on port ${port}`)
 })
