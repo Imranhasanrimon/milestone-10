@@ -8,10 +8,11 @@ const AddCoffee = () => {
         const name = form.name.value;
         const quantity = form.quantity.value;
         const supplier = form.supplier.value;
+        const details = form.details.value;
         const taste = form.taste.value;
         const category = form.category.value;
         const photo = form.photo.value;
-        const newCoffee = { name, quantity, supplier, taste, category, photo }
+        const newCoffee = { name, quantity, details, supplier, taste, category, photo }
         //send data to the server
         fetch('http://localhost:5000/coffee', {
             method: "POST",
