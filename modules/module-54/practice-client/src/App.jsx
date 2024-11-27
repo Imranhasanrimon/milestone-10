@@ -1,16 +1,7 @@
-import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 
 function App() {
-  const [users, setUsers] = useState([])
-  useEffect(() => {
-    fetch('http://localhost:5500/users')
-      .then(res => res.json())
-      .then(data => {
-        setUsers(data)
-      })
-  }, [])
 
   const handleAddUser = e => {
     e.preventDefault();
@@ -28,7 +19,7 @@ function App() {
     })
       .then(res => res.json())
       .then(data => {
-        setUsers(data);
+        console.log(data);
       })
   }
 
@@ -40,9 +31,6 @@ function App() {
         </a>
       </div>
       <h1>Users Management Server</h1>
-      {
-        users.map(user => <p key={user.id}>{user.id} : {user.name} : {user.age}</p>)
-      }
       <form onSubmit={handleAddUser}>
         <input type="text" name="name" placeholder='Name' id="" /> <br />
         <input type="text" name="age" placeholder='Age' id="" /> <br />
