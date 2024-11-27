@@ -3,6 +3,9 @@ const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 5500;
 
+//middleware
+app.use(cors())
+
 const users = [
     { id: 1, name: 'imran', age: 23 },
     { id: 2, name: 'rimon', age: 26 },
