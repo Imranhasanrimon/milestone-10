@@ -4,17 +4,18 @@ import Swal from "sweetalert2";
 const UpdateCoffee = () => {
     const coffee = useLoaderData();
     const { _id, name, quantity, supplier, taste, category, photo, details } = coffee;
+    console.log(_id, name);
     const handleUpdateCoffee = (e) => {
         e.preventDefault();
         const form = e.target;
         const name = form.name.value;
         const quantity = form.quantity.value;
         const supplier = form.supplier.value;
-        // const details = form.details.value;
+        const details = form.details.value;
         const taste = form.taste.value;
         const category = form.category.value;
         const photo = form.photo.value;
-        const updatedCoffee = { name, quantity, supplier, taste, category, photo }
+        const updatedCoffee = { name, quantity, supplier, taste, details, category, photo }
         //send data to the server
         fetch(`http://localhost:5000/coffee/${_id}`, {
             method: "PUT",

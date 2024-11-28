@@ -6,7 +6,6 @@ const CoffeeCard = ({ coffee }) => {
     const { _id, name, quantity, supplier, taste, category, photo } = coffee;
 
     const handleDelete = id => {
-        console.log(id);
 
         Swal.fire({
             title: "Are you sure?",
