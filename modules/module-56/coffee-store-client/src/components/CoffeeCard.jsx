@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const CoffeeCard = ({ coffee, setCoffees, coffees }) => {
-    const { _id, name, quantity, supplier, taste, category, photo } = coffee;
+    const { _id, name, supplier, taste, category, photo } = coffee;
 
     const handleDelete = id => {
 
@@ -58,7 +58,7 @@ const CoffeeCard = ({ coffee, setCoffees, coffees }) => {
         </div>
     );
 };
-CoffeeCard.proptypes = {
+CoffeeCard.propTypes = {
     coffee: PropTypes.object,
     coffees: PropTypes.array,
     setCoffees: PropTypes.func,
