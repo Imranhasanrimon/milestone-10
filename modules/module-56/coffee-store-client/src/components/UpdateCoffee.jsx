@@ -4,7 +4,6 @@ import Swal from "sweetalert2";
 const UpdateCoffee = () => {
     const coffee = useLoaderData();
     const { _id, name, quantity, supplier, taste, category, photo, details } = coffee;
-    console.log(_id, name);
     const handleUpdateCoffee = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -26,7 +25,6 @@ const UpdateCoffee = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 if (data.insertedId) {
                     Swal.fire({
                         title: 'Success!',

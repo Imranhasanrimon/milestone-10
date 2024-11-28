@@ -4,13 +4,14 @@ import { useState } from "react";
 
 function App() {
   const loadedData = useLoaderData();
-  // const [coffees,setCoffees]=useState(loadedData)
+  const [coffees, setCoffees] = useState(loadedData)
+
   return (
     <div className="m-8">
       <h1 className="text-3xl font-semibold">Coffees {loadedData.length}</h1>
       <div className="grid md:grid-cols-2 gap-6">
         {
-          loadedData.map(coffee => <CoffeeCard key={coffee._id} coffee={coffee}></CoffeeCard>)
+          coffees.map(coffee => <CoffeeCard coffees={coffees} setCoffees={setCoffees} key={coffee._id} coffee={coffee}></CoffeeCard>)
         }
       </div>
     </div>
