@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
@@ -57,5 +58,9 @@ const CoffeeCard = ({ coffee, setCoffees, coffees }) => {
         </div>
     );
 };
-
+CoffeeCard.proptypes = {
+    coffee: PropTypes.object,
+    coffees: PropTypes.array,
+    setCoffees: PropTypes.func,
+}
 export default CoffeeCard;
