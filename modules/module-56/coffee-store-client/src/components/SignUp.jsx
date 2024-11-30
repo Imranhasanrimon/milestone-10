@@ -1,16 +1,25 @@
+import { useContext } from "react";
+import { AuthContext } from "../providers/AuthProvider";
 
 const SignUp = () => {
+
+    const { createUser } = useContext(AuthContext)
     const handleSubmit = e => {
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
-        console.log(email);
+        const password = form.password.value
+        createUser(email, password)
+            .then(res => {
+                console.log(res);
+            })
+            .catch(err => console.log(err))
     }
     return (
         <div className="hero bg-base-200 min-h-screen">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left">
-                    <h1 className="text-5xl font-bold">Login now!</h1>
+                    <h1 className="text-5xl font-bold">Sign Up now!</h1>
                     <p className="py-6">
                         Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
                         quasi. In deleniti eaque aut repudiandae et a id nisi.
@@ -34,7 +43,7 @@ const SignUp = () => {
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Login</button>
+                            <button className="btn btn-primary">Sign Up</button>
                         </div>
                     </form>
                 </div>
