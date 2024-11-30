@@ -8,10 +8,18 @@ const SignUp = () => {
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
-        const password = form.password.value
+        const password = form.password.value;
+        const newUser = { email, password }
         createUser(email, password)
             .then(res => {
                 console.log(res);
+                fetch('http://localhost:5000/users', {
+                    method: "POST",
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(newUser)
+                })
             })
             .catch(err => console.log(err))
     }
