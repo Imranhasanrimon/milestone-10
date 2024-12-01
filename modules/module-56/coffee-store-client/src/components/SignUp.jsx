@@ -70,3 +70,4 @@ const SignUp = () => {
 };
 
 export default SignUp;
+//sign up sign in component is done
