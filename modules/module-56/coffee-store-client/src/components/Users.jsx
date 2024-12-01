@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { data, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Users = () => {
@@ -49,6 +49,7 @@ const Users = () => {
                             <th>Name</th>
                             <th>Email</th>
                             <th>Created At</th>
+                            <th>Last Login</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -59,6 +60,7 @@ const Users = () => {
                             <td>{user.name}</td>
                             <td>{user.email}</td>
                             <td>{user.createAt}</td>
+                            <td>{user.lastSignInTime}</td>
                             <td className="space-x-2">
                                 <button className="btn">U</button>
                                 <button onClick={() => handleDelete(user._id)} className="btn">X</button>
