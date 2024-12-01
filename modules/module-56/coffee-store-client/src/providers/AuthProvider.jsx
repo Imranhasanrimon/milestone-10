@@ -36,3 +36,4 @@ AuthProvider.propTypes = {
     children: PropTypes.element
 }
 export default AuthProvider;
+//authprovider component is done
