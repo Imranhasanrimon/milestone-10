@@ -98,5 +98,3 @@ const UpdateCoffee = () => {
 };
 
 export default UpdateCoffee;
-
-//update coffee page is done
