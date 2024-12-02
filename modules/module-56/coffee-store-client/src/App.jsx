@@ -19,4 +19,3 @@ function App() {
 }
 
 export default App
-// app component is done
