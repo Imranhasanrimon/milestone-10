@@ -75,5 +75,3 @@ const Users = () => {
 };
 
 export default Users;
-
-// server side is not working after hosting
