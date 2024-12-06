@@ -94,3 +94,5 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log(`this app listening on port ${port}`)
 })
+
+// this file is working as blueprint for other projecs
