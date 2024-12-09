@@ -8,11 +8,7 @@ const Users = () => {
         console.log('delete ', _id);
         fetch(`http://localhost:5000/users/${_id}`, {
             method: 'DELETE',
-            // headers:{
 
-            // },
-            // body: JSON.stringify()
-            //no need to provide body and headers for delete request
         })
             .then(res => res.json())
             .then(user => {
