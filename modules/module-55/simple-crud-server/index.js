@@ -82,6 +82,7 @@ async function run() {
     } finally {
         // Ensures that the client will close when you finish/error
         // await client.close();
+        //it should not be added for hosting on vercel
     }
 }
 run().catch(console.dir);
